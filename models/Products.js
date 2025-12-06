@@ -1,7 +1,7 @@
-const mongoose = require("mongoose")
-const { applyTimestamps } = require("./User")
+import { Schema, model } from "mongoose"
 
-const productSchema = mongoose.Schema({
+
+const productSchema = Schema({
     title: {
         type: String,
         required: true
@@ -23,4 +23,4 @@ const productSchema = mongoose.Schema({
     },
 },{timestamps: true})
 
-module.exports = mongoose.model("Product", productSchema)
+export default model("Product", productSchema)
